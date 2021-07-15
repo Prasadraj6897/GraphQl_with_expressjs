@@ -1,0 +1,50 @@
+      {
+            websites{
+              id,
+              ownerId,     // For website query in localhost:5000/graphql
+              name
+            }
+        }
+
+
+    {
+        owners {
+          name              // For website query in localhost:5000/graphql
+          id
+        }
+      },
+
+    //to query single id
+       {
+         website(id:1){
+           name
+           ownerId
+         }
+       }
+
+       //to query add
+       mutation{
+            addOwner(name:"john henry"){
+                name
+                id
+            }
+        }
+
+        //for update website
+        mutation{
+            updateWebsite(id:1,name:"facebook1",ownerId:3){
+                name
+                id
+                ownerId
+            }
+            }
+
+            //for remove website
+
+            mutation{
+                removeWebsite(id:1){
+                    name
+                    id
+                }
+                }
+        
